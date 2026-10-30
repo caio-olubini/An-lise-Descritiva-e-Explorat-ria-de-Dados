@@ -1,0 +1,26 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Saídas dos notebooks curadores: arquivos grandes, regerados a cada execução.
+# O que se versiona é o notebook; o CSV curado é publicado em projeto/csv/.
+projeto/curadores/*.csv
+projeto/curadores/*.zip
+projeto/curadores/*.7z
+projeto/curadores/*.parquet
+projeto/curadores/bruto/
+projeto/curadores/executados/
+
+# Material do professor: o README do projeto traz a seção "As armadilhas" (a
+# resposta das seis perguntas centrais) e a pasta dos curadores traz a armadilha
+# de cada dataset reproduzida na última célula. O repositório é público, então
+# isso fica fora.
+projeto/README.md
+projeto/curadores/
