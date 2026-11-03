@@ -26,7 +26,8 @@ Serão entregues um **relatório** e uma **arguição oral**.
   em **URL fixa** durante todo o projeto. O arquivo deve ser lido diretamente do
   link — `read.csv` em R, `pd.read_csv` em Python.
 - **Entrega do relatório:** 15 de dezembro de 2026. O relatório e o código devem
-  ser enviados para o diretório do grupo no Google Drive da disciplina.
+  ser enviados para um diretório em serviço de nuvem (Google Drive ou
+  equivalente), cujo link será divulgado no AVA da disciplina.
 - **Arguição oral:** realizada remotamente, com horário agendado previamente com
   cada grupo.
 - **Não há entregas intermediárias.**
@@ -196,36 +197,41 @@ contratada, com ocupação, escolaridade, idade e salário.
 
 ---
 
-## 3 · Segurança — ocorrências criminais por município
+## 3 · Educação — cursos de ensino superior por município
 
-**Pergunta central:** a criminalidade aumentou no Brasil entre 2015 e 2025?
+**Pergunta central:** o ensino a distância domina o ensino superior brasileiro?
 
-**Arquivo:** `seguranca_publica_municipio.csv` — [URL do CSV — a definir]
+**Arquivo:** `educacao_superior_curso_2023.csv` — [URL do CSV — a definir]
 
-**Descrição.** Registros de ocorrências do **SINESP** (Sistema Nacional de
-Estatísticas de Segurança Pública, do Ministério da Justiça), por município e
-por ano: **667.559 linhas**, 5 colunas. Cada linha corresponde ao total de casos
-de um indicador, em um município, em um ano. Cobre 5.297 municípios das 27
-unidades da federação.
+**Descrição.** Cursos de graduação ofertados no **Censo da Educação Superior
+2023**, do INEP: **660.571 cursos ofertados**, 15 colunas. Cada linha
+corresponde a um curso de uma instituição em um município — 3.495 municípios,
+27 unidades da federação, 2.580 instituições e 46.248 cursos distintos. As
+contagens de alunos (`ingressantes`, `matriculas`, `concluintes`) são as do ano
+de 2023.
 
-Os dados abrangem de 2015 a 2026, e **2026 está incompleto** — o ano ainda não
-havia terminado quando a base foi extraída.
+Um mesmo curso aparece em várias linhas quando a instituição o oferece em mais
+de um município.
 
 **Dicionário dos campos**
 
 | coluna | o que é |
 |---|---|
+| `cod_ies` | Código da instituição de ensino superior |
+| `cod_curso` | Código do curso dentro da instituição |
+| `curso` | Nome do curso (ex.: Pedagogia, Direito, Enfermagem) |
+| `cod_municipio` | Código do município no IBGE |
+| `municipio` | Município onde o curso é ofertado |
 | `uf` | Estado (sigla) |
-| `municipio` | Município |
-| `ano` | Ano do registro (2015 a 2026) |
-| `indicador` | Tipo de ocorrência — 10 valores, listados abaixo |
-| `casos` | Número de casos registrados |
-
-Os 10 indicadores: Feminicídio · Homicídio doloso · Lesão corporal seguida de
-morte · Mandado de prisão cumprido · Morte no trânsito ou em decorrência dele
-(exceto homicídio doloso) · Mortes a esclarecer (sem indício de crime) · Roubo
-seguido de morte (latrocínio) · Suicídio · Tentativa de homicídio · Tentativa de
-feminicídio.
+| `regiao` | Norte, Nordeste, Sudeste, Sul, Centro-Oeste |
+| `capital` | Capital ou Interior |
+| `categoria` | Natureza administrativa: Pública federal, Pública estadual, Pública municipal, Privada com fins lucrativos, Privada sem fins lucrativos, Especial |
+| `organizacao` | Universidade, Centro universitário, Faculdade, Instituto Federal de Educação, Ciência e Tecnologia, Centro Federal de Educação Tecnológica |
+| `grau` | Bacharelado, Licenciatura, Tecnológico, Bacharelado e licenciatura, Não informado |
+| `modalidade` | Presencial ou A distância |
+| `ingressantes` | Alunos que ingressaram no curso em 2023 |
+| `matriculas` | Alunos matriculados no curso em 2023 |
+| `concluintes` | Alunos que concluíram o curso em 2023 |
 
 ---
 
@@ -259,62 +265,73 @@ municípios com pelo menos 100 nascidos vivos no ano.
 
 ---
 
-## 5 · Desmatamento — alertas na Amazônia Legal
+## 5 · Agricultura — produção agrícola por município
 
-**Pergunta central:** o desmatamento na Amazônia aumentou em 2025?
+**Pergunta central:** qual estado tem a agricultura mais produtiva?
 
-**Arquivo:** `desmatamento_amazonia_alertas.csv` — [URL do CSV — a definir]
+**Arquivo:** `producao_agricola_municipio_2023.csv` — [URL do CSV — a definir]
 
-**Descrição.** Alertas de desmatamento e degradação do sistema **DETER**, do
-INPE, na Amazônia Legal: **466.707 alertas**, 9 colunas. Cada linha corresponde a
-um alerta — uma área detectada por satélite, com data, município e tipo de
-alteração. Abrange de 2016 a 2026.
+**Descrição.** Produção das lavouras temporárias em 2023, da **Produção
+Agrícola Municipal** (PAM), do IBGE: **35.919 lavouras**, 11 colunas. Cada
+linha corresponde a uma lavoura — a combinação de um município com um produto —
+em 5.484 municípios e 30 produtos, somando 90,2 milhões de hectares colhidos e
+R$ 690,9 bilhões em valor de produção.
 
 **Dicionário dos campos**
 
 | coluna | o que é |
 |---|---|
-| `data` | Data do alerta |
-| `ano` | Ano da data do alerta (2016 a 2026) |
-| `mes` | Mês (1 a 12) |
-| `ano_prodes` | Ano de referência do PRODES, que mede de agosto de um ano a julho do seguinte |
-| `uf` | Estado (sigla), dentro da Amazônia Legal |
-| `municipio` | Município |
-| `codigo_municipio` | Código do município no IBGE |
-| `classe` | Tipo de alteração detectada — 8 valores, listados abaixo |
-| `area_km2` | Área do alerta, em km² |
+| `cod_municipio` | Código do município no IBGE |
+| `municipio` | Nome do município |
+| `uf` | Estado (sigla) |
+| `uf_nome` | Nome do estado |
+| `regiao` | Norte, Nordeste, Sudeste, Sul, Centro-Oeste |
+| `produto` | Lavoura (30 produtos, ex.: Soja (em grão), Cana-de-açúcar, Mandioca, Feijão (em grão)) |
+| `area_plantada_ha` | Área plantada, em hectares |
+| `area_colhida_ha` | Área efetivamente colhida, em hectares |
+| `quantidade_t` | Quantidade produzida, em toneladas |
+| `rendimento_kg_ha` | Rendimento médio da lavoura, em kg por hectare |
+| `valor_mil_reais` | Valor da produção, em milhares de reais |
 
-As 8 classes: `DESMATAMENTO_CR` (corte raso, a área foi totalmente desmatada) ·
-`DESMATAMENTO_VEG` (desmatamento com vegetação) · `DEGRADACAO` (floresta
-degradada, não removida) · `CICATRIZ_DE_QUEIMADA` (marca de queimada) ·
-`MINERACAO` (garimpo) · `CORTE_SELETIVO` (retirada de madeira) ·
-`CS_DESORDENADO` e `CS_GEOMETRICO` (alertas com problema de geometria).
+O **rendimento** é a razão entre a quantidade produzida e a área colhida. Ele é
+calculado pelo IBGE para cada lavoura de cada município — não existe um
+rendimento do município nem do estado na tabela.
 
 ---
 
-## 6 · Chuvas — leituras diárias das estações do INMET
+## 6 · Moradia — saneamento básico por município
 
-**Pergunta central:** está chovendo menos nas estações do INMET?
+**Pergunta central:** qual região do Brasil tem mais domicílios com esgoto
+adequado?
 
-**Arquivo:** `chuvas_diaria_estacao.csv` — [URL do CSV — a definir]
+**Arquivo:** `saneamento_municipio_2022.csv` — [URL do CSV — a definir]
 
-**Descrição.** Leituras diárias das estações meteorológicas do **INMET** no
-Brasil, de 2010 a 2020: **378.364 linhas**, 12 colunas. Cada linha corresponde a
-um dia de uma estação, com a chuva acumulada e a temperatura média.
+**Descrição.** Domicílios particulares permanentes ocupados, por tipo de
+esgotamento sanitário, do **Censo Demográfico 2022** (IBGE): **5.570
+municípios**, 16 colunas. Cada linha corresponde a um município, com a contagem
+de domicílios em cada destino do esgoto e a proporção de esgoto adequado.
 
 **Dicionário dos campos**
 
 | coluna | o que é |
 |---|---|
-| `data` | Data da leitura (2010-01-01 a 2020-12-31) |
-| `ano` | Ano |
-| `codigo_estacao` | Código da estação do INMET |
-| `nome_estacao` | Nome da estação |
+| `cod_municipio` | Código do município no IBGE |
+| `municipio` | Nome do município |
 | `uf` | Estado (sigla) |
-| `regiao` | N, NE, CO, SE, S |
-| `latitude` | Coordenada geográfica |
-| `longitude` | Coordenada geográfica |
-| `altitude` | Altitude da estação, em metros |
-| `precipitacao_mm` | Chuva acumulada no dia, em milímetros (vazio quando não há leitura) |
-| `horas_lidas` | Quantas horas do dia a estação registrou (0 a 24) |
-| `temperatura_media_c` | Temperatura média do dia, em °C (vazio quando não há leitura) |
+| `uf_nome` | Nome do estado |
+| `regiao` | Norte, Nordeste, Sudeste, Sul, Centro-Oeste |
+| `total_domicilios` | Domicílios particulares permanentes ocupados |
+| `dom_adequado` | Domicílios com esgotamento adequado *(derivada)* |
+| `dom_rede_geral_pluvial` | Domicílios com esgoto na rede geral ou pluvial |
+| `dom_fossa_septica_ligada` | Domicílios com fossa séptica ou filtro ligado à rede |
+| `dom_fossa_septica_nao_ligada` | Domicílios com fossa séptica ou filtro não ligado à rede |
+| `dom_fossa_rudimentar` | Domicílios com fossa rudimentar ou buraco |
+| `dom_vala` | Domicílios que lançam o esgoto em vala |
+| `dom_rio` | Domicílios que lançam o esgoto em rio, lago, córrego ou mar |
+| `dom_outra` | Domicílios com outra forma de esgotamento |
+| `dom_sem_banheiro` | Domicílios sem banheiro nem sanitário |
+| `pct_adequado` | Domicílios com esgotamento adequado, em % do total *(derivada)* |
+
+O esgotamento **adequado** é a classificação do IBGE: rede geral ou pluvial, ou
+fossa séptica ou filtro ligado à rede. As duas parcelas aparecem separadas nas
+colunas acima, e `dom_adequado` é a soma delas.
