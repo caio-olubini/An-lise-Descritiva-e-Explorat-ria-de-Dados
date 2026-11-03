@@ -15,7 +15,6 @@ projeto/curadores/*.csv
 projeto/curadores/*.zip
 projeto/curadores/*.7z
 projeto/curadores/*.parquet
-projeto/curadores/bruto/
 projeto/curadores/executados/
 
 # Material do professor: o README do projeto traz a seção "As armadilhas" (a
