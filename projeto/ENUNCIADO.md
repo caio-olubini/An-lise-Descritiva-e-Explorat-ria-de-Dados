@@ -292,29 +292,39 @@ degradada, não removida) · `CICATRIZ_DE_QUEIMADA` (marca de queimada) ·
 
 ---
 
-## 6 · Chuvas — leituras diárias das estações do INMET
+## 6 · Moradia — saneamento básico por município
 
-**Pergunta central:** está chovendo menos nas estações do INMET?
+**Pergunta central:** qual região do Brasil tem mais domicílios com esgoto
+adequado?
 
-**Arquivo:** `chuvas_diaria_estacao.csv` — [URL do CSV — a definir]
+**Arquivo:** `saneamento_municipio_2022.csv` — [URL do CSV — a definir]
 
-**Descrição.** Leituras diárias das estações meteorológicas do **INMET** no
-Brasil, de 2010 a 2020: **378.364 linhas**, 12 colunas. Cada linha corresponde a
-um dia de uma estação, com a chuva acumulada e a temperatura média.
+**Descrição.** Domicílios particulares permanentes ocupados, por tipo de
+esgotamento sanitário, do **Censo Demográfico 2022** (IBGE): **5.570
+municípios**, 16 colunas. Cada linha corresponde a um município, com a contagem
+de domicílios em cada destino do esgoto e a proporção de esgoto adequado.
 
 **Dicionário dos campos**
 
 | coluna | o que é |
 |---|---|
-| `data` | Data da leitura (2010-01-01 a 2020-12-31) |
-| `ano` | Ano |
-| `codigo_estacao` | Código da estação do INMET |
-| `nome_estacao` | Nome da estação |
+| `cod_municipio` | Código do município no IBGE |
+| `municipio` | Nome do município |
 | `uf` | Estado (sigla) |
-| `regiao` | N, NE, CO, SE, S |
-| `latitude` | Coordenada geográfica |
-| `longitude` | Coordenada geográfica |
-| `altitude` | Altitude da estação, em metros |
-| `precipitacao_mm` | Chuva acumulada no dia, em milímetros (vazio quando não há leitura) |
-| `horas_lidas` | Quantas horas do dia a estação registrou (0 a 24) |
-| `temperatura_media_c` | Temperatura média do dia, em °C (vazio quando não há leitura) |
+| `uf_nome` | Nome do estado |
+| `regiao` | Norte, Nordeste, Sudeste, Sul, Centro-Oeste |
+| `total_domicilios` | Domicílios particulares permanentes ocupados |
+| `dom_adequado` | Domicílios com esgotamento adequado *(derivada)* |
+| `dom_rede_geral_pluvial` | Domicílios com esgoto na rede geral ou pluvial |
+| `dom_fossa_septica_ligada` | Domicílios com fossa séptica ou filtro ligado à rede |
+| `dom_fossa_septica_nao_ligada` | Domicílios com fossa séptica ou filtro não ligado à rede |
+| `dom_fossa_rudimentar` | Domicílios com fossa rudimentar ou buraco |
+| `dom_vala` | Domicílios que lançam o esgoto em vala |
+| `dom_rio` | Domicílios que lançam o esgoto em rio, lago, córrego ou mar |
+| `dom_outra` | Domicílios com outra forma de esgotamento |
+| `dom_sem_banheiro` | Domicílios sem banheiro nem sanitário |
+| `pct_adequado` | Domicílios com esgotamento adequado, em % do total *(derivada)* |
+
+O esgotamento **adequado** é a classificação do IBGE: rede geral ou pluvial, ou
+fossa séptica ou filtro ligado à rede. As duas parcelas aparecem separadas nas
+colunas acima, e `dom_adequado` é a soma delas.
