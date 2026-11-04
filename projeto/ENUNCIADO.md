@@ -19,12 +19,16 @@ Serão entregues um **relatório** e uma **arguição oral**.
 ## 2 · Organização
 
 - São **seis conjuntos de dados**, um por grupo. Cada grupo tem **5 integrantes**.
-  A ordem de escolha é sorteada, e cada grupo escolhe o seu quando chegar a sua
-  vez.
+- A escolha do tema é por **ordem de manifestação**: o grupo que se manifestar
+  primeiro fica com o tema. As escolhas são registradas numa **planilha de
+  atribuição**, disponibilizada à turma — a planilha é o registro oficial de
+  quem está com qual tema, e um tema já escolhido não pode ser pego por outro
+  grupo.
 - A linguagem é livre: **Python ou R**.
-- Os seis arquivos são publicados junto com este enunciado e ficam disponíveis
-  em **URL fixa** durante todo o projeto. O arquivo deve ser lido diretamente do
-  link — `read.csv` em R, `pd.read_csv` em Python.
+- Os seis arquivos ficam no **repositório do projeto no GitHub**, cujo link será
+  divulgado no AVA da disciplina, e permanecem disponíveis durante todo o
+  projeto. O arquivo deve ser lido diretamente do link — `read.csv` em R,
+  `pd.read_csv` em Python.
 - **Entrega do relatório:** 15 de dezembro de 2026. O relatório e o código devem
   ser enviados para um diretório em serviço de nuvem (Google Drive ou
   equivalente), cujo link será divulgado no AVA da disciplina.
@@ -112,9 +116,10 @@ devem estar aptos a responder sobre qualquer parte do trabalho**.
 
 # Anexo — os seis conjuntos de dados
 
-Cada ficha apresenta a pergunta central, o link do arquivo, a descrição do
-conjunto e o dicionário das colunas. Todos os arquivos estão em CSV e podem ser
-lidos diretamente do link.
+Cada ficha apresenta a pergunta central, o arquivo, a descrição do conjunto e o
+dicionário das colunas. Todos os arquivos estão em CSV, ficam no **repositório
+do projeto no GitHub** (link divulgado no AVA) e podem ser lidos diretamente do
+link.
 
 Os conjuntos são provenientes de fontes oficiais brasileiras e foram previamente
 tratados. A descrição do conteúdo de cada arquivo integra o item 1 do relatório.
@@ -126,7 +131,7 @@ tratados. A descrição do conteúdo de cada arquivo integra o item 1 do relató
 **Pergunta central:** acidentes em rodovia federal são mais perigosos de dia ou
 de noite?
 
-**Arquivo:** `acidentes_prf_2024.csv` — [URL do CSV — a definir]
+**Arquivo:** `acidentes_prf_2024.csv` — [link no repositório do GitHub — a divulgar]
 
 **Descrição.** Acidentes registrados pela Polícia Rodoviária Federal nas
 rodovias federais do país em 2024: **73.201 acidentes**, 29 colunas. Cada linha
@@ -173,7 +178,7 @@ corresponde a um acidente, com data, hora, local, causa, tipo e resultado
 
 **Pergunta central:** quais ocupações pagam melhor em São Paulo?
 
-**Arquivo:** `caged_sp_2024_01.csv` — [URL do CSV — a definir]
+**Arquivo:** `caged_sp_2024_01.csv` — [link no repositório do GitHub — a divulgar]
 
 **Descrição.** Admissões registradas no **Novo CAGED** (registro oficial de
 emprego do Ministério do Trabalho) no estado de São Paulo em janeiro de 2024:
@@ -201,7 +206,7 @@ contratada, com ocupação, escolaridade, idade e salário.
 
 **Pergunta central:** o ensino a distância domina o ensino superior brasileiro?
 
-**Arquivo:** `educacao_superior_curso_2023.csv` — [URL do CSV — a definir]
+**Arquivo:** `educacao_superior_curso_2023.csv` — [link no repositório do GitHub — a divulgar]
 
 **Descrição.** Cursos de graduação ofertados no **Censo da Educação Superior
 2023**, do INEP: **660.571 cursos ofertados**, 15 colunas. Cada linha
@@ -240,7 +245,7 @@ de um município.
 **Pergunta central:** a mortalidade infantil é maior no interior ou nas
 capitais?
 
-**Arquivo:** `mortalidade_infantil_municipio_2022.csv` — [URL do CSV — a definir]
+**Arquivo:** `mortalidade_infantil_municipio_2022.csv` — [link no repositório do GitHub — a divulgar]
 
 **Descrição.** Nascimentos e óbitos de crianças menores de 1 ano em 2022, por
 município, a partir do **SINASC** (registro de nascidos vivos) e do **SIM**
@@ -269,7 +274,7 @@ municípios com pelo menos 100 nascidos vivos no ano.
 
 **Pergunta central:** qual estado tem a agricultura mais produtiva?
 
-**Arquivo:** `producao_agricola_municipio_2023.csv` — [URL do CSV — a definir]
+**Arquivo:** `producao_agricola_municipio_2023.csv` — [link no repositório do GitHub — a divulgar]
 
 **Descrição.** Produção das lavouras temporárias em 2023, da **Produção
 Agrícola Municipal** (PAM), do IBGE: **35.919 lavouras**, 11 colunas. Cada
@@ -304,7 +309,7 @@ rendimento do município nem do estado na tabela.
 **Pergunta central:** qual região do Brasil tem mais domicílios com esgoto
 adequado?
 
-**Arquivo:** `saneamento_municipio_2022.csv` — [URL do CSV — a definir]
+**Arquivo:** `saneamento_municipio_2022.csv` — [link no repositório do GitHub — a divulgar]
 
 **Descrição.** Domicílios particulares permanentes ocupados, por tipo de
 esgotamento sanitário, do **Censo Demográfico 2022** (IBGE): **5.570
